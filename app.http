@@ -1,0 +1,31 @@
+POST http://localhost:3000/notes
+# Content-Type: application/json
+
+{
+    "Title": "Build D",
+    "Content":"Build a capable of holding 40000 litres"
+
+    //"UpdatedAt":"2021-07-25"
+}
+
+### GET ALL PROJECTS
+GET http://localhost:3000/notes
+
+### GET ONE PROJECT
+GET http://localhost:3000/notes/
+
+### UPDATING PROJECT
+PUT http://localhost:3000/notes/
+Content-Type: application/json
+
+
+    {
+    "Title": "Build Dam",
+    "Content":"Build a Dam capable of holding 40000 litres",
+    "CreatedAt":"Nyeri",
+    "UpdatedAt":"2021-07-25"
+}
+
+
+###
+DELETE http://localhost:3000/notes/

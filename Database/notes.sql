@@ -17,4 +17,4 @@ END CATCH
  
  DROP TABLE IF EXISTS myNotesTable
 
--- SELECT * FROM projectsTable
+SELECT * FROM myNotesTable

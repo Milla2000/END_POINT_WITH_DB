@@ -20,12 +20,13 @@ dotenv.config();
 async function creatingaNote(note) {
   try {
     const id = v4();
+    const createdAt = new Date();
     await mssql.connect(NotesConfig);
     const pool = await mssql.connect();
     const query = `INSERT INTO myNotesTable (Id, Title, Content, CreatedAt) 
-                        VALUES ('${note.id}', '${note.NoteTitle}', '${
+                        VALUES ('${id}', '${note.NoteTitle}', '${
       note.Content
-    }', '${note.CreatedAt.toISOString()}')`;
+    }', '${createdAt.toISOString()}')`;
     await pool.request().query(query);
     mssql.close();
     console.log("New note created successfully.");
@@ -67,8 +68,10 @@ async function noteGettingById(id) {
 // Function to update a note by its ID
 async function noteUpdatingByID(id, updatedNote) {
   try {
+    
     await mssql.connect(NotesConfig);
     const pool = await mssql.connect();
+    const createdAt = new Date();
     const query = `
     UPDATE myNotesTable
     SET Title = '${updatedNote.NoteTitle}', 
@@ -88,7 +91,7 @@ async function noteDeletingById(id) {
   try {
     await mssql.connect(NotesConfig);
     const pool = await mssql.connect();
-    const query = `DELETE FROM notesTable WHERE ID = '${id}'`;
+    const query = `DELETE FROM myNotesTable WHERE ID = '${id}'`;
     await pool.request().query(query);
     mssql.close();
     console.log("successfully deleted note.");
