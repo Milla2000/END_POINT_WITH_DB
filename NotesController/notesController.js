@@ -104,11 +104,11 @@ async function noteGettingById(req, res) {
 
 
 // Function to update a note by its ID
-async function noteUpdatingByID(id, updatedNote) {
+async function noteUpdatingByID(req, res) {
   try {
-
-    const id = req.params.id;
-    
+    const id= req.params.id;
+    const updatedNote = req.body;
+    // Notes(id, title, content, createdAt);
     await mssql.connect(NotesConfig);
     const pool = await mssql.connect();
     const createdAt = new Date();
@@ -130,8 +130,13 @@ async function noteUpdatingByID(id, updatedNote) {
 
     mssql.close();
     console.log("Successfully updated note.");
+    console.log(updatedNote);
+
+    // Send a success response to the client
+    res.status(200).json({ message: "Successfully updated note." });
   } catch (err) {
     console.error(err.message);
+    res.status(500).json({ error: "Internal server error." });
   }
 }
 

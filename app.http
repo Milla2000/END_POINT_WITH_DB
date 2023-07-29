@@ -15,17 +15,17 @@ GET http://localhost:3000/notes
 GET http://localhost:3000/notes/fe78f67e-2dc7-4646-913a-3c3026bf2d35
 
 ### UPDATING PROJECT
-PUT http://localhost:3000/notes/
+PUT http://localhost:3000/notes/fe78f67e-2dc7-4646-913a-3c3026bf2d35
 Content-Type: application/json
 
 
     {
-    "Title": "Build Dam",
-    "Content":"Build a Dam capable of holding 40000 litres",
-    "CreatedAt":"Nyeri",
-    "UpdatedAt":"2021-07-25"
+    "title": "Jesso",
+    "content":" capable of holding 40000 litres",
+    "createdAt":"Nyeruko"
+    
 }
 
 
 ###
-DELETE http://localhost:3000/notes/f1fdd64b-2bb8-4be6-9da3-abec4185b5de
+DELETE http://localhost:3000/notes/fe78f67e-2dc7-4646-913a-3c3026bf2d35
