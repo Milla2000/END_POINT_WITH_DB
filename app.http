@@ -1,9 +1,9 @@
 POST http://localhost:3000/notes
-# Content-Type: application/json
+Content-Type: application/json
 
 {
-    "Title": "Build D",
-    "Content":"Build a capable of holding 40000 litres"
+    "title": "Build Dguhjk",
+    "content":"Build a capable of holding 40000 litres"
 
     //"UpdatedAt":"2021-07-25"
 }
@@ -12,7 +12,7 @@ POST http://localhost:3000/notes
 GET http://localhost:3000/notes
 
 ### GET ONE PROJECT
-GET http://localhost:3000/notes/
+GET http://localhost:3000/notes/fe78f67e-2dc7-4646-913a-3c3026bf2d35
 
 ### UPDATING PROJECT
 PUT http://localhost:3000/notes/
@@ -28,4 +28,4 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:3000/notes/
+DELETE http://localhost:3000/notes/f1fdd64b-2bb8-4be6-9da3-abec4185b5de

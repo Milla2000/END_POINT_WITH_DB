@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const { Noteroutes } = require("./Routes/myroutes");
-
+// app.use(express.json());
 app.use("/notes", Noteroutes);
 
 app.listen(3000, () => {
