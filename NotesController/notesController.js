@@ -75,7 +75,7 @@ async function gettingallnotes(req, res) {
 // Function to get a single note by its ID
 async function noteGettingById(req, res) {
   try {
-    // Assuming the note ID is passed as a route parameter
+    
     const id = req.params.id;
 
     await mssql.connect(NotesConfig);
@@ -94,7 +94,7 @@ async function noteGettingById(req, res) {
       return res.status(404).json({ error: "Note not found." });
     }
 
-    // Send the note as JSON response
+
     res.status(200).json(result.recordset[0]);
   } catch (err) {
     console.error(err.message);
@@ -141,16 +141,22 @@ async function noteUpdatingByID(req, res) {
 }
 
 // Function to delete a note by its ID
-async function noteDeletingById(id) {
+async function noteDeletingById(req, res) {
   try {
+    const id = req.params.id;
+    console.log("delete note", id);
     await mssql.connect(NotesConfig);
     const pool = await mssql.connect();
+    // console.log(id);
 
     const query = `DELETE FROM myNotesTable WHERE ID = @id`;
     await pool.request().input("id", mssql.VarChar, id).query(query);
 
     mssql.close();
     console.log(`Successfully deleted note. ${id}`);
+
+    // Send a success response to the client
+    res.status(200).json({ message: `Successfully deleted note. ${id}` });
   } catch (err) {
     console.error(err.message);
   }
@@ -164,3 +170,7 @@ module.exports = {
   noteUpdatingByID,
   noteDeletingById,
 };
+
+
+
+
