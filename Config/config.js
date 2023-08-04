@@ -26,11 +26,11 @@ const NotesConfig = {
 //     })
 // .catch(err => console.log('Database Connection Failed! Bad Config: ', err));
 
-mssql.connect(NotesConfig).then((pool) => {
-  if (pool.connected) {
-    console.log("Connected to MSSQL");
-  }
-});
+// mssql.connect(NotesConfig).then((pool) => {
+//   if (pool.connected) {
+//     console.log("Connected to MSSQL");
+//   }
+// });
 
 module.exports = {
   NotesConfig,

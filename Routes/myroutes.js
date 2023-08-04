@@ -1,6 +1,11 @@
 const { Router } = require("express");
-const { creatingaNote, gettingallnotes, noteGettingById, noteUpdatingByID, noteDeletingById } = require("../NotesController/notesController");
-
+const {
+  creatingaNote,
+  gettingallnotes,
+  noteGettingById,
+  noteUpdatingByID,
+  noteDeletingById,
+} = require("../NotesController/notesController");
 
 const Noteroutes = Router();
 
@@ -11,5 +16,5 @@ Noteroutes.put("/:id", noteUpdatingByID);
 Noteroutes.delete("/:id", noteDeletingById);
 
 module.exports = {
-  Noteroutes
+  Noteroutes,
 };

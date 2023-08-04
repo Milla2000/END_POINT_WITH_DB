@@ -12,10 +12,10 @@ Content-Type: application/json
 GET http://localhost:3000/notes
 
 ### GET ONE PROJECT
-GET http://localhost:3000/notes/34a08279-f1ae-4cb3-831a-0d8708ac80c0
+GET http://localhost:3000/notes/15994ef2-0faa-49dd-b7ca-b446dd23824d
 
 ### UPDATING PROJECT
-PUT http://localhost:3000/notes/fe78f67e-2dc7-4646-913a-3c3026bf2d35
+PUT http://localhost:3000/notes/15994ef2-0faa-49dd-b7ca-b446dd23824d
 Content-Type: application/json
 
 
@@ -28,4 +28,4 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:3000/notes/34a08279-f1ae-4cb3-831a-0d8708ac80c0
+DELETE http://localhost:3000/notes/15994ef2-0faa-49dd-b7ca-b446dd23824d

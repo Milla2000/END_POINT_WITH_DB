@@ -66,7 +66,7 @@ async function gettingallnotes(req, res) {
     // Send the notes as JSON response
     res.status(200).json(result.recordset);
   } catch (err) {
-    console.error(err.message);
+    // console.error(err.message);
     res.status(500).json({ error: "Internal server error." });
   }
 }
